@@ -1,0 +1,48 @@
+package com.capg.empapp.dao;
+
+import com.capg.empapp.db.EmployeeDB;
+import com.capg.empapp.dto.Employee;
+import com.capg.empapp.exceptions.InvalidEmployeeIdException;
+
+
+public class EmployeeDaoImpl implements IEmpDao {
+
+	public boolean addEmployee(Employee e)  {
+		// TODO Auto-generated method stub
+		return EmployeeDB.addEmployee(e);
+	}
+	
+	public Employee[] getAllEmployees() {
+		// TODO Auto-generated method stub
+		return EmployeeDB.employees;
+	}
+    //===========================================================================================================
+	
+	public boolean editSalaryByEmployeeId(int id,int empNewSalary) throws InvalidEmployeeIdException {
+		// TODO Auto-generated method stub
+		return EmployeeDB.editSalaryByEmployeeID(id,empNewSalary);
+	}
+
+	public boolean editExpByEmployeeId(int id,int empNewExp) throws InvalidEmployeeIdException {
+		// TODO Auto-generated method stub
+		return EmployeeDB.editExpByEmployeeId(id,empNewExp);
+	}
+
+	
+
+	public Employee[] getEmployeeBySalary(int salary) {
+		// TODO Auto-generated method stub
+		return EmployeeDB.getEmployeeBySalary(salary);
+	}
+
+	public Employee[] getEmployessBySalaryRange(int salaryRangeMin, int salaryRangeMax) {
+		// TODO Auto-generated method stub
+		return EmployeeDB.getEmployessBySalaryRange(salaryRangeMin, salaryRangeMax);
+	}
+
+	public Employee[] getEmployeeBySalaryRange(int salaryRangeMin, int salaryRangeMax) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
